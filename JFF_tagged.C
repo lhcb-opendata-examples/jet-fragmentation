@@ -230,15 +230,24 @@ void JFF_tagged()
     leg_jt->SetTextSize(0.03);
     TLegend *leg_r = new TLegend(0.6,0.7,0.9,0.9);
     leg_r->SetTextSize(0.03);
+
+    TLatex *latex = new TLatex();    
+    latex->SetNDC();
+    latex->SetTextSize(0.04);
+    latex->SetTextFont(22); 
     
     hp_NNp->Draw("E1");
+    latex->DrawLatex(0.4, 0.4, "LHCb Open Data");
     c0->Print("output/tagged/hp_NNp.pdf");
     hk_NNk->Draw("E1");
+    latex->DrawLatex(0.4, 0.4, "LHCb Open Data");
     c0->Print("output/tagged/hk_NNk.pdf");
     hpi_NNpi->Draw("E1");
+    latex->DrawLatex(0.4, 0.4, "LHCb Open Data");
     c0->Print("output/tagged/hpi_NNpi.pdf");
 
     hr->Draw("E1");
+    latex->DrawLatex(0.4, 0.2, "LHCb Open Data");
     c0->Print("output/tagged/hr.pdf");
 
     hr_ptlow->Draw("E1");
@@ -252,11 +261,13 @@ void JFF_tagged()
     leg_r->AddEntry(hr_ptmed.GetPtr(),"30 < #it{p_{T,jet}} < 50 GeV/c","le");
     leg_r->AddEntry(hr_pthigh.GetPtr(),"50 < #it{p_{T,jet}} < 100 GeV/c","le");
     leg_r->Draw();
+    latex->DrawLatex(0.4, 0.2, "LHCb Open Data");
     c0->Print("output/tagged/hr_ptbinned.pdf");
     
     hz->Draw("E1");
     c0->SetLogy();
     c0->SetLogx();
+    latex->DrawLatex(0.4, 0.4, "LHCb Open Data");
     c0->Print("output/tagged/hz.pdf");   
     
     hz_ptlow->Draw("E1");
@@ -270,9 +281,11 @@ void JFF_tagged()
     leg_z->AddEntry(hz_ptmed.GetPtr(),"30 < #it{p_{T,jet}} < 50 GeV/c","le");
     leg_z->AddEntry(hz_pthigh.GetPtr(),"50 < #it{p_{T,jet}} < 100 GeV/c","le");
     leg_z->Draw();
+    latex->DrawLatex(0.4, 0.4, "LHCb Open Data");
     c0->Print("output/tagged/hz_ptbinned.pdf");
     
     hjt->Draw("E1");
+    latex->DrawLatex(0.4, 0.4, "LHCb Open Data");
     c0->Print("output/tagged/hjt.pdf");
 
     hjt_ptlow->Draw("E1");
@@ -286,5 +299,6 @@ void JFF_tagged()
     leg_jt->AddEntry(hjt_ptmed.GetPtr(),"30 < #it{p_{T,jet}} < 50 GeV/c","le");
     leg_jt->AddEntry(hjt_pthigh.GetPtr(),"50 < #it{p_{T,jet}} < 100 GeV/c","le");
     leg_jt->Draw();
+    latex->DrawLatex(0.4, 0.4, "LHCb Open Data");
     c0->Print("output/tagged/hjt_ptbinned.pdf");
 }

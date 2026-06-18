@@ -1,5 +1,6 @@
 #include "TFile.h"
 #include "TH1.h"
+#include "TLatex.h"
 
 void JFF_compare()
 {
@@ -21,6 +22,7 @@ void JFF_compare()
     c0->SetLogy();
 
     hz_ptlow->Scale(1./hpt_norm->GetBinContent(1));
+    hz_ptlow->GetYaxis()->SetTitle("#frac{1}{#it{N}_{jets}}#frac{d#it{N}}{d#it{z}}");
     hz_ptlow->SetMarkerStyle(8);
     hz_ptlow->SetLineColor(kBlack);
     hz_ptlow->SetMarkerColor(kBlack);
@@ -71,12 +73,12 @@ void JFF_compare()
     hz_pthigh_tagged->Draw("E1,same");
     legend->Draw();
 
+    TLatex *latex = new TLatex();    
+    latex->SetNDC();
+    latex->SetTextSize(0.04);
+    latex->SetTextFont(22); 
+    latex->DrawLatex(0.4, 0.58, "LHCb Open Data");
+
     c0->SaveAs("output/compare/hz_tagged_compare.pdf");
-
-
-
-    
-
-
 
 }
