@@ -20,7 +20,7 @@ This repository provides separate scripts for analyzing a single jet in the dije
 
 $$z = \frac{p_{\rm{hadron}} \cdot p_{\rm{jet}}}{|p_{\rm{jet}}|^{2}}$$
 
-$$j_{T} = \frac{p_{\rm{hadron}} \times p_{\rm{jet}}}{|p_{\rm{jet}}|}$$
+$$j_{T} = \frac{|p_{\rm{hadron}} \times p_{\rm{jet}}|}{|p_{\rm{jet}}|}$$
 
 $$r = \Delta R(\rm{hadron, jet}) = \sqrt{(\eta_{\rm{hadron}} - \eta_{jet})^{2} + (\phi_{\rm{hadron}} - \phi_{\rm{jet}})^{2}}$$
 
