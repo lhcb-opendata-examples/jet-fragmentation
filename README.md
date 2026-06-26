@@ -18,9 +18,9 @@ The dijet candidate is labeled as `H_10` in all corresponding columns in the ntu
 
 This repository provides separate scripts for analyzing a single jet in the dijet candidate sample, and analyzing a single jet in the SV-tagged dijet candidate sample. In both cases, the collinear jet fragmentation functions are extracted, as well as the transverse momentum with respect to the jet axis ($j_{T}$) and the radial profile of hadrons within the jet ($\Delta R(\rm{hadron}, \rm{jet})$). More specifically, the variables are defined as
 
-$$z = \frac{p_{\rm{hadron}} \cdot p_{\rm{jet}}}{|p_{\rm{jet}}|^{2}}$$
+$$z = \frac{\vec{p}_{\rm{hadron}} \cdot \vec{p}_{\rm{jet}}}{|\vec{p}_{\rm{jet}}|^{2}}$$
 
-$$j_{T} = \frac{|p_{\rm{hadron}} \times p_{\rm{jet}}|}{|p_{\rm{jet}}|}$$
+$$j_{T} = \frac{|vec{p}_{\rm{hadron}} \times \vec{p}_{\rm{jet}}|}{|\vec{p}_{\rm{jet}}|}$$
 
 $$r = \Delta R(\rm{hadron, jet}) = \sqrt{(\eta_{\rm{hadron}} - \eta_{jet})^{2} + (\phi_{\rm{hadron}} - \phi_{\rm{jet}})^{2}}$$
 

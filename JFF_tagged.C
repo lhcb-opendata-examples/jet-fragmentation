@@ -25,10 +25,13 @@ void JFF_tagged()
 {
 
     // Enable xrootd logging (this acutally helps to significantly speed up the multithreaded processing)
+    // Remove if replacing file list with local copies
     gSystem->Setenv("XRD_LOGLEVEL", "Debug");
 
     // Redirect the resulting text away from the terminal screen
+    // Remove if replacing file list with local copies
     gSystem->Setenv("XRD_LOGFILE", "output/tagged/xrootd_debug_stream.log");
+
     // Enable implicit multi-threading for fast, asynchronous background reading over XRootD
     ROOT::EnableImplicitMT();
 
@@ -37,6 +40,9 @@ void JFF_tagged()
 
     // Expand the network cache size from 30MB to 200MB
     gEnv->SetValue("TTreeCache.Size", 200000000); 
+
+    // List of input files. Only one is uncommented to speed up processing time. Uncomment all files to process full dataset. 
+    // Replace with local copies of files to increase run speed
     std::vector<std::string> fileList = {
     /*  "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/5970/outputs/real-production/00394031_00000001_1.dvntuple.root",
         "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/5970/outputs/real-production/00394032_00000001_1.dvntuple.root",
@@ -174,7 +180,7 @@ void JFF_tagged()
 
     auto hp_NNp = pipeline.Histo1D({"p_NNp", ";prob_NNp;", 40, 0., 1.0}, "proton_NNp");
     auto hk_NNk = pipeline.Histo1D({"k_NNk", ";prob_NNk;", 40, 0., 1.0}, "kaon_NNk");
-    auto hpi_NNpi = pipeline.Histo1D({"pi_NNpi", ";prob_NNk;", 40, 0., 1.0}, "pion_NNpi");
+    auto hpi_NNpi = pipeline.Histo1D({"pi_NNpi", ";prob_NNpi;", 40, 0., 1.0}, "pion_NNpi");
 
     auto hz_ptlow  = ptLow.Histo1D({"hz_ptlow", ";#it{z};#frac{d#it{N}}{d#it{z}}", nbins, bins}, "z_vec");
     auto hz_ptmed  = ptMed.Histo1D({"hz_ptmed", ";#it{z};#frac{d#it{N}}{d#it{z}}", nbins, bins}, "z_vec");
