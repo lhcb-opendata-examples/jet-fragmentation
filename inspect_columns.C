@@ -3,7 +3,7 @@
 
 void inspect_columns() {
     // Load the file into an RDataFrame
-    ROOT::RDataFrame df("dijets/DecayTree", "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00392998_00000001_1.dvntuple.root");
+    ROOT::RDataFrame df("dijets/DecayTree", "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393007_00000004_1.dvntuple.root");
 
     // Fetch and print the list of column names
     auto columns = df.GetColumnNames();

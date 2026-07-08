@@ -44,29 +44,29 @@ void JFF()
     // Replace with local copies of files to increase run speed
     std::vector<std::string> fileList = {
         /*
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00392998_00000001_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00392998_00000002_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00392999_00000001_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393002_00000001_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393002_00000002_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393002_00000003_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393002_00000004_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393002_00000005_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393003_00000001_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393003_00000002_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393003_00000003_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393003_00000004_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393003_00000005_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393006_00000001_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393006_00000002_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393006_00000003_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393006_00000004_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393006_00000005_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393007_00000001_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393007_00000002_1.dvntuple.root",
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393007_00000003_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00392998_00000001_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00392998_00000002_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00392999_00000001_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393002_00000001_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393002_00000002_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393002_00000003_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393002_00000004_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393002_00000005_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393003_00000001_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393003_00000002_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393003_00000003_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393003_00000004_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393003_00000005_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393006_00000001_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393006_00000002_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393006_00000003_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393006_00000004_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393006_00000005_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393007_00000001_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393007_00000002_1.dvntuple.root",
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393007_00000003_1.dvntuple.root",
         */
-        "root://eospublic.cern.ch//eos/opendata/lhcb/upload/opendata-lhcb-ntupling-service/analysis-productions/merge-requests/6000/outputs/real-production/00393007_00000004_1.dvntuple.root"
+        "root://eospublic.cern.ch//eos/opendata/lhcb/CollisionNtuples/OPENDATA.LHCB.CGFF.E7X9/outputs/real-production/00393007_00000004_1.dvntuple.root"
     };
 
     // Set up custom bins
