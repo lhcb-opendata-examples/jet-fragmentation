@@ -1,0 +1,12 @@
+inputs:
+  files:
+    - Snakefile
+    - JFF.C
+    - JFF_tagged.C
+    - JFF_compare.C
+workflow:
+  type: snakemake
+  file: Snakefile
+outputs:
+  directories:
+    - output
