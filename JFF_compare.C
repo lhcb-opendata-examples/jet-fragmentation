@@ -1,9 +1,12 @@
 #include "TFile.h"
 #include "TH1.h"
 #include "TLatex.h"
+#include "TSystem.h"
 
 void JFF_compare()
 {
+    gSystem->mkdir("output/compare", kTRUE);
+
     TFile *infile = TFile::Open("output/JFF_hists.root");
     TFile *infile_tagged = TFile::Open("output/tagged/JFF_hists.root");
 

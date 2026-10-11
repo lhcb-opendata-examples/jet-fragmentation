@@ -7,6 +7,7 @@
 #include "TLorentzVector.h"
 #include "TVector3.h"
 #include "TCanvas.h"
+#include "TSystem.h"
 #include <vector>
 #include <string>
 #include <cmath>
@@ -23,6 +24,8 @@ auto apply_id_mask(int target_id) {
 
 void JFF()
 {
+    gSystem->mkdir("output", kTRUE);
+
     // Enable xrootd logging (this acutally helps to significantly speed up the multithreaded processing)
     // Remove if replacing file list with local copies
     gSystem->Setenv("XRD_LOGLEVEL", "Debug");
